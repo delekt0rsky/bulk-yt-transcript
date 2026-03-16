@@ -5,3 +5,4 @@ dist/
 .env.local
 .env.*.local
 faq.txt
+todo.md
