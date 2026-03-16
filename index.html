@@ -768,6 +768,213 @@ nav {
   margin-bottom: 32px;
 }
 
+/* ---- PRICING ---- */
+.pricing {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.pricing-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card.featured {
+  border-color: var(--accent);
+  position: relative;
+}
+
+.pricing-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  white-space: nowrap;
+}
+
+.pricing-tier {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pricing-card.featured .pricing-tier {
+  color: var(--white);
+}
+
+.pricing-credits {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.pricing-amount {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+}
+
+.pricing-amount.free {
+  color: var(--accent);
+}
+
+.pricing-per {
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin-bottom: 20px;
+  min-height: 1em;
+}
+
+.pricing-card .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+  font-size: 0.875rem;
+  padding: 10px 16px;
+}
+
+.pricing-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: center;
+}
+
+.pricing-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  white-space: nowrap;
+}
+
+.pricing-feature svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .pricing-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- FAQ ---- */
+.faq {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.faq-item:not([open]) summary:hover h3 {
+  color: var(--gray-light);
+}
+
+.faq-item:not([open]) summary:hover .faq-icon {
+  color: var(--accent-dark);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary h3 {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.975rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: var(--white);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--gray);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+  color: var(--accent);
+}
+
+.faq-item[open] summary h3 {
+  color: var(--accent);
+}
+
+.faq-body {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.75;
+  padding-bottom: 20px;
+}
+
 /* ---- FOOTER ---- */
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -1023,7 +1230,7 @@ footer p {
         </div>
         <div>
           <h3>Privacy First</h3>
-          <p>Runs entirely in your browser. No data is sent to external servers. No tracking, no analytics, no accounts.</p>
+          <p>Runs entirely in your browser. No data is sent to external servers. No tracking, no analytics.</p>
         </div>
       </div>
     </div>
@@ -1049,6 +1256,181 @@ footer p {
         <span class="tag">SEO Professionals</span>
       </div>
     </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="features-header">
+      <p class="section-label">Pricing</p>
+      <h2>Pay as You Go. No Subscriptions.</h2>
+      <p>Start for free and get more credits when you need them.</p>
+    </div>
+    <div class="pricing-cards">
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-credits">25 credits</div>
+        <div class="pricing-amount">$0</div>
+        <div class="pricing-per">No credit card required</div>
+        <a href="#" class="btn btn-outline btn-sm">Start Free</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-credits">100 credits</div>
+        <div class="pricing-amount">$4.99</div>
+        <div class="pricing-per">$0.05 / transcript</div>
+        <a href="#" class="btn btn-outline btn-sm">Buy Starter</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Standard</div>
+        <div class="pricing-credits">500 credits</div>
+        <div class="pricing-amount">$14.99</div>
+        <div class="pricing-per">$0.03 / transcript</div>
+        <a href="#" class="btn btn-outline btn-sm">Buy Standard</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Best Value</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-credits">2,000 credits</div>
+        <div class="pricing-amount">$39.99</div>
+        <div class="pricing-per">$0.02 / transcript</div>
+        <a href="#" class="btn btn-primary btn-sm">Buy Pro</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Business</div>
+        <div class="pricing-credits">5,000 credits</div>
+        <div class="pricing-amount">$79.99</div>
+        <div class="pricing-per">$0.016 / transcript</div>
+        <a href="#" class="btn btn-outline btn-sm">Buy Business</a>
+      </div>
+
+    </div>
+
+    <div class="pricing-features">
+      <div class="pricing-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Credits never expire
+      </div>
+      <div class="pricing-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Pay for what you use: no subscriptions
+      </div>
+      <div class="pricing-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Works with videos, channels, playlists, and Shorts
+      </div>
+      <div class="pricing-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Bulk extract up to 500 transcripts at once
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="features-header">
+      <p class="section-label">FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>
+          <h3>What is Bulk YouTube Transcript?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Bulk YouTube Transcript is a Chrome extension that lets you download transcripts from entire YouTube channels and playlists in one go. Instead of opening each video individually, you set how many transcripts you want, choose your format, and download them all at once — as a single merged file or a ZIP of individual files.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>How is this different from other YouTube transcript tools?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Most transcript tools only work one video at a time. Bulk YouTube Transcript lets you pull the latest 10, the most popular 50, or up to 500 videos from any channel or playlist in a single session. You can sort by most recent or most popular, filter by videos, Shorts, or both, and export in multiple formats. No other Chrome extension gives you this level of bulk control.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>What formats can I export transcripts in?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">You can export in plain text (TXT), timestamped transcripts, SRT, VTT, JSON, and CSV. TXT and timestamped formats are ideal for reading and editing. SRT and VTT work for subtitles and captions. JSON and CSV are built for AI workflows, data pipelines, and knowledge base tools like ChatGPT, Claude, and NotebookLM.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>Can I use YouTube transcripts to train an AI or build a knowledge base?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Yes — this is one of the most popular use cases. Researchers, data scientists, and content teams use Bulk YouTube Transcript to export channel content in AI-ready formats and feed it directly into tools like ChatGPT, Claude, NotebookLM, or custom AI assistants. The JSON and CSV exports are specifically designed for this kind of workflow.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>Does it work on YouTube Shorts and podcasts?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Yes. The extension works on regular YouTube videos, Shorts, and podcasts hosted on YouTube — as long as the video is public and has a transcript available.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>Do I need to create an account to use it?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">No account required. You get 25 free transcript downloads from the moment you install the extension. There is nothing to sign up for.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>Is my data private?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Yes. The extension runs entirely in your browser. No data is sent to external servers, and there is no tracking or analytics. Your transcript downloads stay on your machine.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>How do I get started?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Add the extension to Chrome, navigate to any YouTube video, channel, or playlist page, click the icon in your browser toolbar, choose your settings, and hit download. The whole process takes under a minute to set up.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>What is Single Video mode?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Single Video mode appears when you are on a YouTube video page. It lets you grab the transcript of that one video instantly with one click — choose your format and either download the file or copy it to your clipboard.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>What is Bulk mode?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">Bulk mode activates when you are on a YouTube channel or playlist page. You set how many videos you want, pick a sort order (latest or most popular), choose your export format, and the extension downloads all the transcripts at once. You can get them as one merged file or as separate files in a ZIP.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <h3>Who is Bulk YouTube Transcript built for?</h3>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </summary>
+        <p class="faq-body">The extension is used by AI researchers, content creators, students, journalists, SEO professionals, data scientists, podcast listeners, and anyone who regularly learns from or works with YouTube content at scale.</p>
+      </details>
+
     </div>
   </div>
 </section>
