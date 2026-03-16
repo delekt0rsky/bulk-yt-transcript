@@ -511,24 +511,61 @@ nav {
   font-weight: 600;
 }
 
-/* ---- MODES ---- */
-.modes {
+/* ---- USE CASES ---- */
+.use-cases {
   padding: 80px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.modes-grid {
+.use-cases-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 48px;
 }
 
-.mode-card {
+.use-case-card {
   background: var(--dark-2);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
-  padding: 40px;
+  padding: 32px;
+}
+
+.use-case-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.use-case-icon svg {
+  color: var(--accent);
+}
+
+.use-case-card h3 {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.use-case-card p {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .mode-tag {
@@ -1064,18 +1101,7 @@ footer p {
 <!-- VIDEO EMBED -->
 <section class="video-section">
   <div class="container">
-    <div class="video-wrapper">
-      <!-- Replace this placeholder with your YouTube embed:
-           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-           title="Bulk YouTube Transcript Demo" frameborder="0"
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-           allowfullscreen></iframe>
-      -->
-      <div class="video-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-        <p>Demo video embed goes here</p>
-      </div>
-    </div>
+    <div style="position: relative; padding-bottom: 64.98194945848375%; height: 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08);"><iframe src="https://www.loom.com/embed/2d29754960894cde9d2a67e88e6af72d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
   </div>
 </section>
 </div>
@@ -1198,24 +1224,40 @@ footer p {
   </div>
 </section>
 
-<!-- MODES -->
-<section class="modes" id="modes">
+<!-- USE CASES -->
+<section class="use-cases" id="use-cases">
   <div class="container">
     <div class="features-header">
-      <p class="section-label">Two modes</p>
-      <h2>Single Video or Bulk. Your Call.</h2>
+      <p class="section-label">Use Cases</p>
+      <h2>What People Actually Build With It</h2>
+      <p>Transcripts are raw material. Here's what you can make.</p>
     </div>
-    <div class="modes-grid">
-      <div class="mode-card">
-        <span class="mode-tag">Single Video</span>
-        <h3>Instant One-Click Grab</h3>
-        <p>On any YouTube video page, grab the transcript instantly with one click. Choose your format and download or copy to clipboard.</p>
+    <div class="use-cases-grid">
+
+      <div class="use-case-card">
+        <div class="use-case-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <h3>Build Your Own AI Knowledge Base</h3>
+        <p>Export an entire channel's worth of transcripts and drop them into NotebookLM, ChatGPT, or a vector database. Ask questions, generate summaries, and extract insights from years of content — in minutes.</p>
       </div>
-      <div class="mode-card">
-        <span class="mode-tag">Bulk Mode</span>
-        <h3>Entire Channels and Playlists</h3>
-        <p>On any channel or playlist page, set how many videos you want (latest or most popular), pick your format, and let it do the rest. Downloads as a single merged file or a ZIP of individual files.</p>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        </div>
+        <h3>Train a Script Writer That Sounds Like You</h3>
+        <p>Feed your own channel's transcripts into an AI and teach it your voice, structure, and style. Generate first drafts that already feel on-brand — instead of starting from scratch every time.</p>
       </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
+        <h3>Analyze Competitors and Find Viral Hooks</h3>
+        <p>Pull the top-performing videos from any channel and scan for patterns in how they open, what they promise, and why they hold attention. Spot the hooks your competitors keep reusing before you write your next video.</p>
+      </div>
+
     </div>
   </div>
 </section>
